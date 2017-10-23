@@ -24,6 +24,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+App = CodePush(App);
+
 export default class App extends Component {
   constructor(props){
     super(props);
@@ -71,7 +73,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native! v0.0.1
         </Text>
         <Button title="Send event" onPress={()=> this.sendEvent()} />
         <Button title="Native crash" onPress={()=> this.nativeCrash()} />
