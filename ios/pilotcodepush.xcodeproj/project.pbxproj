@@ -1088,10 +1088,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = thes.dev.pilotcodepush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thes.pilotcodepush;
 				PRODUCT_NAME = pilotcodepush;
-				PROVISIONING_PROFILE = "569d7c01-e90a-480c-9821-2991c7ed5dbc";
-				PROVISIONING_PROFILE_SPECIFIER = thes.dev;
+				PROVISIONING_PROFILE = "2e8d0d58-57de-4ab8-a671-e63ded00fafc";
+				PROVISIONING_PROFILE_SPECIFIER = "the-dev-pilotcodepush";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1110,10 +1110,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = thes.dev.pilotcodepush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thes.pilotcodepush;
 				PRODUCT_NAME = pilotcodepush;
-				PROVISIONING_PROFILE = "569d7c01-e90a-480c-9821-2991c7ed5dbc";
-				PROVISIONING_PROFILE_SPECIFIER = thes.dev;
+				PROVISIONING_PROFILE = "2e8d0d58-57de-4ab8-a671-e63ded00fafc";
+				PROVISIONING_PROFILE_SPECIFIER = "the-dev-pilotcodepush";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
