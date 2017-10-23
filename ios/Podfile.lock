@@ -1,21 +1,47 @@
 PODS:
+  - CodePush (5.1.3):
+    - CodePush/Base64 (= 5.1.3)
+    - CodePush/Core (= 5.1.3)
+    - CodePush/JWT (= 5.1.3)
+    - CodePush/SSZipArchive (= 5.1.3)
+    - React
+  - CodePush/Base64 (5.1.3):
+    - React
+  - CodePush/Core (5.1.3):
+    - React
+  - CodePush/JWT (5.1.3):
+    - React
+  - CodePush/SSZipArchive (5.1.3):
+    - React
   - MobileCenter/Analytics (0.13.0):
     - MobileCenter/Core
   - MobileCenter/Core (0.13.0)
   - MobileCenter/Crashes (0.13.0):
     - MobileCenter/Core
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
   - RNMobileCenterShared (0.10.0):
     - MobileCenter/Core (~> 0.13.0)
 
 DEPENDENCIES:
+  - CodePush (from `../node_modules/react-native-code-push`)
+  - CodePush/Core (from `../node_modules/react-native-code-push`)
+  - CodePush/JWT (from `../node_modules/react-native-code-push`)
   - MobileCenter/Analytics (~> 0.13.0)
   - MobileCenter/Crashes (~> 0.13.0)
   - RNMobileCenterShared (~> 0.10.0)
 
+EXTERNAL SOURCES:
+  CodePush:
+    :path: "../node_modules/react-native-code-push"
+
 SPEC CHECKSUMS:
+  CodePush: ffe876b57db57e0295653d69aa1653b0278b43ad
   MobileCenter: f531f5d7bc3245cf1abb178022b24d968b467280
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
   RNMobileCenterShared: d36d0245f9eb9627e60cd20623502906f61a783f
 
-PODFILE CHECKSUM: ca106b8e75fb0c81b389f4d388ee1a8879049a09
+PODFILE CHECKSUM: d3f010340a05f6f8b00bd605d18589afc6af930e
 
 COCOAPODS: 1.2.1
