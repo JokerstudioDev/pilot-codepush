@@ -9,8 +9,13 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+
+import Analytics from 'mobile-center-analytics';
+import Crashes from 'mobile-center-crashes'
+import CodePush from 'react-native-code-push'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,19 +24,60 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {logs: []};
+  }
+
+  sendEven(){
+    Analytics.trackEvent('My custom event', {
+      prop1: new Date().getSeconds()
+    });
+  }
+
+  codepushSync(){
+    this.setState({logs: ['Started at ' + new Date().getTime()]});
+    CodePush.sync({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE
+    },(status) => {
+      for (var key in CodePush.SyncStatus){
+        if (status === CodePush.SyncStatus.key[key]){
+          this.setState(prevState =>({logs: [...prevState, key.replac(/_/g,' ')]}));
+          break;
+        }
+      }
+    });
+  }
+
+  nativeCrash(){
+    Crashes.generateTestCrash();
+  }
+
+  jsCrash(){
+    this.func1();
+  }
+
+  func1(){this.func2();}
+  func2(){this.func3();}
+  func3(){this.func4();}
+  func4(){this.func5();}
+  func5(){
+    throw new Error('My uncaught javascript exception');
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Button title="Send event" onPress={()=> this.sendEvent()} />
+        <Button title="Native crash" onPress={()=> this.nativeCrash()} />
+        <Button title="JS crash" onPress={()=> this.jsCrash()} />
+        <Button title="Code push" onPress={()=> this.codepushSync()} />
+        <Text>{JSON.stringify(this.state.logs)}</Text>
       </View>
     );
   }
