@@ -1086,6 +1086,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jokerstudio.pilotcodepush;
 				PRODUCT_NAME = pilotcodepush;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1104,6 +1105,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jokerstudio.pilotcodepush;
 				PRODUCT_NAME = pilotcodepush;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
