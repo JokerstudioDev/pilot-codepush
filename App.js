@@ -30,7 +30,7 @@ export default class App extends Component {
     this.state = {logs: []};
   }
 
-  sendEven(){
+  sendEvent(){
     Analytics.trackEvent('My custom event', {
       prop1: new Date().getSeconds()
     });
