@@ -9,15 +9,6 @@ target 'pilotcodepush' do
   pod 'MobileCenter/Crashes', '~> 0.13.0'
   pod 'MobileCenter/Analytics', '~> 0.13.0'
   pod 'RNMobileCenterShared', '~> 0.10.0'
-  pod 'CodePush', :path => '../node_modules/react-native-code-push'
-  # `SSZipArchive`, `JWT` and `Base64` already in use
-  pod 'CodePush', :path => '../node_modules/react-native-code-push', :subspecs => ['Core']
-  
-  # or for example
-  
-  # `SSZipArchive` and `Base64` already in use
-  pod 'CodePush', :path => '../node_modules/react-native-code-push', :subspecs => ['Core', 'JWT']
-
   
 
   target 'pilotcodepushTests' do
