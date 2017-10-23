@@ -44,7 +44,7 @@ export default class App extends Component {
     },(status) => {
       for (var key in CodePush.SyncStatus){
         if (status === CodePush.SyncStatus.key[key]){
-          this.setState(prevState =>({logs: [...prevState, key.replac(/_/g,' ')]}));
+          this.setState(prevState =>({logs: [...prevState, key.replace(/_/g,' ')]}));
           break;
         }
       }
