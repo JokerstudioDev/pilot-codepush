@@ -46,7 +46,6 @@
 		C57FF720F82D4E50A4EC96AB /* libRNMobileCenter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FA590BB2A94E1DA81A338E /* libRNMobileCenter.a */; };
 		E039770F27D2603C283121AF /* libPods-pilotcodepush-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905EDD00B2D560615179633D /* libPods-pilotcodepush-tvOS.a */; };
 		E1C83B4BC907F436C6044759 /* libPods-pilotcodepushTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 199D69EDF26E9AF310A0F90F /* libPods-pilotcodepushTests.a */; };
-		F32329111F9E021D0062E42B /* libPods-pilotcodepush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE4724B9CE25D3399025FA /* libPods-pilotcodepush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,7 +408,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				F32329111F9E021D0062E42B /* libPods-pilotcodepush.a in Frameworks */,
 				C57FF720F82D4E50A4EC96AB /* libRNMobileCenter.a in Frameworks */,
 				A7459B71CDD2464A883DA905 /* libRNAnalytics.a in Frameworks */,
 				70BEF2050E89435DA40458B5 /* libRNCrashes.a in Frameworks */,
