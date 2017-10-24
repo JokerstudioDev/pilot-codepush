@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  Alert
 } from 'react-native';
 
 import Analytics from 'mobile-center-analytics';
@@ -25,6 +26,20 @@ const instructions = Platform.select({
 });
 
 App = CodePush(App);
+
+Crashes.process((reports, send) => {
+  if (reports.length > 0) {
+    Alert.alert(
+      `Send ${reports.length} crash(es)?`,
+      '',
+      [
+        { text: 'Send', onPress: () => send(true) },
+        { text: 'Ignore', onPress: () => send(false), style: 'cancel' },
+      ],
+      { cancelable: false }
+    );
+  }
+});
 
 export default class App extends Component {
   constructor(props){
@@ -42,11 +57,12 @@ export default class App extends Component {
     this.setState({logs: ['Started at ' + new Date().getTime()]});
     CodePush.sync({
       updateDialog: true,
-      installMode: CodePush.InstallMode.IMMEDIATE
+      installMode: CodePush.InstallMode.ON_NEXT_RESTART,
+      updateDialog: { updateTitle: "กรุณาอัพเดทเวอชั่น" }
     },(status) => {
       for (var key in CodePush.SyncStatus){
-        if (status === CodePush.SyncStatus.key[key]){
-          this.setState(prevState =>({logs: [...prevState, key.replace(/_/g,' ')]}));
+        if(status === CodePush.SyncStatus.key[key]){
+          this.setState(prevState =>({logs: [...prevState, key]}));
           break;
         }
       }
@@ -73,7 +89,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native! v0.0.1
+          React Native + Code Push! v0.0.11
         </Text>
         <Button title="Send event" onPress={()=> this.sendEvent()} />
         <Button title="Native crash" onPress={()=> this.nativeCrash()} />
